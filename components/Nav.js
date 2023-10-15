@@ -3,12 +3,11 @@ import styled from "styled-components";
 import PostItBox from "./PostItBox";
 
 const StyledNav = styled.header`
-    width: 100%; 
-    height: 100%; 
-    background-color: #fff;
+    width: 100%;
+    height: 100%;
     background-image: url('/notebook.jpg');
     background-size: cover; 
-    background-position: center; 
+    background-position: left; 
     display: flex;
     justify-content: center; 
     align-items: center; 

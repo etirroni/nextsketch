@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('painted-solid-concrete-wall-textured-backdrop.jpg'); 
+      background-image: url('windowsXp.jpg'); 
       background-size: cover;
       background-repeat: no-repeat; 
       
