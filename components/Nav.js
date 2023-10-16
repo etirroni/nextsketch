@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import FolderIcon from "./FolderIcon";
 import CmdIcon from "./CmdIcon";
-import WordIcon from "./wordIcon";
+import WordIcon from "./WordIcon";
 
 const StyledNav = styled.header`
     width: 100%;
@@ -12,36 +12,59 @@ const StyledNav = styled.header`
 const NavLinkWrapper= styled.div`
     display:flex;
     flex-direction:column;
+    align-items: left;
+  
+    gap:40px;
+    width:100%;
+    height:100%;
+`
+const ButtonHolder = styled.div`
+    display:flex;
     align-items: center;
-    gap:50px;
+    justify-content: left;
+    gap:4px;
 `
 const Button = styled.button`  
     border:none;
     background-color:transparent;
-    font-size:18px; 
+    font-size:18px;
+    padding:10px; 
     color:#fff;
+    &:hover{
+        scale:1.1;
+        
+    }
+
 `
 
 export default function Nav({onContentChange}) {
     return(
         <StyledNav>
                 <NavLinkWrapper>
-                    <Button onClick={() => onContentChange("homePage")}>       
-                        <CmdIcon/>
-                        Home
-                    </Button>
-                    <Button onClick={() => onContentChange("aboutPage")}>       
-                        <WordIcon/>
-                        About
-                    </Button>
-                    <Button onClick={() => onContentChange("myWorkPage")}>       
-                        <FolderIcon/>
-                        Projects
-                    </Button>
-                    <Button onClick={() => onContentChange("contactPage")}>       
-                        <FolderIcon/>
-                        Contact_Info
-                    </Button>
+                    <ButtonHolder>
+                        <Button onClick={() => onContentChange("homePage")}>       
+                            <CmdIcon/>
+                            Home
+                        </Button>
+                    </ButtonHolder>
+                    <ButtonHolder>
+                        <Button onClick={() => onContentChange("aboutPage")}>       
+                            <WordIcon/>
+                            About
+                        </Button>
+                    </ButtonHolder>
+                    <ButtonHolder>
+                        <Button onClick={() => onContentChange("projectsPage")}>       
+                            <FolderIcon/>
+                            Projects
+                        </Button>
+                    </ButtonHolder>
+                    <ButtonHolder>
+                        <Button onClick={() => onContentChange("contactPage")}>       
+                            <FolderIcon/>
+                            Contact_Info
+                        </Button>
+                    </ButtonHolder>
                 </NavLinkWrapper>       
         </StyledNav>
     )

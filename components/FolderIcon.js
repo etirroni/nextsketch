@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
 const IconHolder=styled.div`
-    &:hover{
-        scale:1.1;
-    }
+margin:0 20px;
+&:hover{
+    opacity:0.7;
+}
 `
 
 export default function FolderIcon(){

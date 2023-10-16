@@ -3,6 +3,7 @@ import LeftColumn from "@/components/LeftColumn";
 import RightColumn from "@/components/RightColumn";
 import Nav from "@/components/Nav";
 import AboutPage from "@/components/About";
+import ProjectsPage from "@/components/Projects";
 import TicTacToe from "@/components/TicTacToe";
 import styled from "styled-components";
 import { useRouter } from 'next/router';
@@ -36,6 +37,10 @@ export default function HomePage() {
             {mainScreenContent === "aboutPage" && 
                             <ComputerScreenBox word="True">
                               <AboutPage />
+                            </ComputerScreenBox>}
+            {mainScreenContent === "projectsPage" && 
+                            <ComputerScreenBox word="True">
+                              <ProjectsPage />
                             </ComputerScreenBox>}
           </MainScreen>
         </RightColumn>
