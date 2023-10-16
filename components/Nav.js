@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import PostItBox from "./PostItBox";
+import Title from "./Title";
 
 const StyledNav = styled.header`
     width: 100%;
@@ -16,14 +17,7 @@ const StyledNav = styled.header`
     border-radius:10px; 
     box-shadow:2px 2px 3px 5px #000;
 `
-const Title = styled.h1`
-    color:#000;
-    font-weight: bold;
-    text-decoration:none;
-    font-size:40px;
-    margin-bottom: 50px;
-    white-space:nowrap;   
-`
+
 const Wrapper = styled.div`
     display:flex;
     flex-direction:column;
