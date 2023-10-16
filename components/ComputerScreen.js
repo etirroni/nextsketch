@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 
-const Box = styled.div`
+export const BoxStyle = css`
     width: 100%;
     height: 100%;
     background-color: #000;    
@@ -10,14 +10,21 @@ const Box = styled.div`
     line-height: 1.5; 
     border: 2px solid #00F; 
     border-radius: 4px;
-    overflow: auto; 
-}
-`
+    overflow: auto;
 
-export default function ComputerScreenBox({children}){
+${props => props.word &&  css`
+    font-size: 14px;
+    color:#000;
+  `}
+`
+const StyledBox=styled.div`
+${BoxStyle}
+`;
+
+export default function ComputerScreenBox({children, ...rest}){
     return(
-        <Box>
+        <StyledBox {...rest}>
             {children}
-        </Box>
+        </StyledBox>
     )
 }
