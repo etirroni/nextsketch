@@ -10,7 +10,7 @@ export const BoxStyle = css`
     line-height: 1.5; 
     border: 2px solid #00F; 
     border-radius: 4px;
-    overflow: auto;
+    
 
 ${props => props.word &&  css`
     font-size: 14px;

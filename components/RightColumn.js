@@ -7,6 +7,7 @@ max-width: 75%;
 padding:20px;
 margin:20px;
 
+
 `
 
 export default function RightColumn ({children}) {

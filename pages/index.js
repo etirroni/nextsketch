@@ -4,14 +4,15 @@ import RightColumn from "@/components/RightColumn";
 import Nav from "@/components/Nav";
 import AboutPage from "@/components/About";
 import ProjectsPage from "@/components/Projects";
+import ContactPage from "@/components/Contact";
 import TicTacToe from "@/components/TicTacToe";
 import styled from "styled-components";
-import { useRouter } from 'next/router';
 import { useState } from "react";
 
 
 const PageWrap=styled.div`
   display:flex;
+
 `
 const MainScreen=styled.div`
   display:flex;
@@ -42,6 +43,8 @@ export default function HomePage() {
                             <ComputerScreenBox word="True">
                               <ProjectsPage />
                             </ComputerScreenBox>}
+            {mainScreenContent === "contactPage" && 
+                            <ContactPage word="True" />}
           </MainScreen>
         </RightColumn>
     </PageWrap>
