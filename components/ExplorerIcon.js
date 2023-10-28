@@ -1,16 +1,18 @@
 import styled from "styled-components"
 
 const IconHolder=styled.div`
-margin:0 20px;
-
+img{
+    width:50px;
+}
 &:hover{
     opacity:0.7;
 }
+
 `
 
-export default function FolderIcon(){
+export default function ExplorerIcon(){
     return(<IconHolder>
-                <img src="/folderIcon.png"/>
+                <img src="/explorerIcon.png"/>
             </IconHolder>
     )
 }

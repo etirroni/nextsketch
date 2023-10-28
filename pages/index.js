@@ -34,17 +34,17 @@ export default function HomePage() {
             {mainScreenContent === "homePage" && 
                             <ComputerScreenBox>
                                 <TicTacToe />
-                              </ComputerScreenBox>}
+                              </ComputerScreenBox>
+            }
             {mainScreenContent === "aboutPage" && 
-                            <ComputerScreenBox word="True">
-                              <AboutPage />
-                            </ComputerScreenBox>}
+                            <AboutPage/>
+            }
             {mainScreenContent === "projectsPage" && 
-                            <ComputerScreenBox word="True">
                               <ProjectsPage />
-                            </ComputerScreenBox>}
+            }
             {mainScreenContent === "contactPage" && 
-                            <ContactPage word="True" />}
+                            <ContactPage word="True" />
+            }
           </MainScreen>
         </RightColumn>
     </PageWrap>

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Title from "./Title"
+import CogIcon from "./CogIcon"
 
 const AboutBg=styled.div`
     background-image: url('contactbg.png'); 
@@ -32,7 +33,6 @@ const GridItem1=styled.div`
     border-radius:10px;
     padding:10px;
     margin-top:120px;
-    border: 4px solid blue;
     text-align:center;
 `
 const GridItem2=styled.div`
@@ -40,7 +40,6 @@ const GridItem2=styled.div`
     grid-column: 1 / 2;
     background-color:transparent;
     margin-right:15px;
-    border: 4px solid green;
     border-radius:10px;
     padding:10px; 
 `
@@ -49,7 +48,6 @@ const GridItem3=styled.div`
     grid-column: 1 / 2;
     background-color:transparent;
     margin-right:15px;
-    border: 4px solid red;
     border-radius:10px;
     padding:10px;    
 `
@@ -62,8 +60,18 @@ const SidebarRight=styled.div`
     border-radius:10px;
     border: 4px solid orange;
 `
-const ContactTitles=styled.h2`
-    
+const NameRow=styled.div`
+    display:flex
+    align-items:center;
+    justify-content:center;
+    text-align:left;
+    flex-direction: column;
+    padding-top:15px;
+    svg{
+        width:20px;
+        
+    }
+  
 `
 
 export default function ContactPage(){
@@ -71,18 +79,31 @@ export default function ContactPage(){
         <AboutBg>
             <GridContainer>
                 <GridItem1>
-                    <ContactTitles>Joel Tirroniemi</ContactTitles>
-                    <p style={{ paddingTop: '20px' }}>Trust me i'm an engineer... (soon). Currently working on my thesis in<br/>
-                                                      lorem ipsum </p>
+                    <h2>Joel Tirroniemi</h2>
+                    <NameRow>
+                    <div style={{ display:'flex', flexDirection:'row',alignItems:'center', gap:'5px'}}>
+                            <CogIcon/>
+                        <p>
+                            ICT-Engineer (soon). <br/> 
+                            Fullstack / frontend developement. <br/>
+                            Currently working on my thesis. Open for new work opportunities.
+                        </p>
+                    </div>    
+                        
+                    </NameRow>
                 </GridItem1>
                 <GridItem2>
-                    <ContactTitles>Contact Info</ContactTitles>
-                    <p>You can find my contact info from my LinkedIn profile down below</p>
+                    <h2>Contact Info</h2>
+                    <p>You can find my contact info from my LinkedIn profile down below.</p>
                 </GridItem2>
                 <GridItem3>
-                    <ContactTitles>Links</ContactTitles>
-                    <p>To my Linkedin profile:</p>
-                    <p>Github:</p>
+                    <h2>Links</h2>
+                    <a href='https://www.linkedin.com/in/eelis-tirroniemi-392261265'target='_blank' rel='noopener noreferrer'>
+                        <p>To my Linkedin profile</p>
+                    </a>
+                    <a href='https://github.com/etirroni' target='_blank' rel='noopener noreferrer'>
+                        <p>Github (most of the repositories are private).</p>
+                    </a>
                 </GridItem3>
                 <SidebarRight>
 

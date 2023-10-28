@@ -2,6 +2,7 @@ import styled from "styled-components";
 import FolderIcon from "./FolderIcon";
 import CmdIcon from "./CmdIcon";
 import WordIcon from "./WordIcon";
+import ExplorerIcon from "./ExplorerIcon";
 
 const StyledNav = styled.header`
     width: 100%;
@@ -44,7 +45,7 @@ export default function Nav({onContentChange}) {
                     <ButtonHolder>
                         <Button onClick={() => onContentChange("homePage")}>       
                             <CmdIcon/>
-                            Home
+                            Home.exe
                         </Button>
                     </ButtonHolder>
                     <ButtonHolder>
@@ -61,7 +62,7 @@ export default function Nav({onContentChange}) {
                     </ButtonHolder>
                     <ButtonHolder>
                         <Button onClick={() => onContentChange("contactPage")}>       
-                            <FolderIcon/>
+                            <ExplorerIcon/>
                             Contact_Info
                         </Button>
                     </ButtonHolder>
