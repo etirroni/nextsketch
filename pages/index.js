@@ -31,19 +31,24 @@ export default function HomePage() {
         </LeftColumn>
         <RightColumn>
           <MainScreen>
-            {mainScreenContent === "homePage" && 
-                            <ComputerScreenBox>
+          {mainScreenContent === "homePage" && 
+                       <></>
+            }
+            {mainScreenContent === "gamePage" && 
+                            <ComputerScreenBox  tictactoe="True" >
                                 <TicTacToe />
                               </ComputerScreenBox>
             }
             {mainScreenContent === "aboutPage" && 
-                            <AboutPage/>
+
+                              <AboutPage/>
+
             }
             {mainScreenContent === "projectsPage" && 
-                              <ProjectsPage />
+                            <ProjectsPage />
             }
             {mainScreenContent === "contactPage" && 
-                            <ContactPage word="True" />
+                            <ContactPage />
             }
           </MainScreen>
         </RightColumn>

@@ -43,9 +43,9 @@ export default function Nav({onContentChange}) {
         <StyledNav>
                 <NavLinkWrapper>
                     <ButtonHolder>
-                        <Button onClick={() => onContentChange("homePage")}>       
+                        <Button onClick={() => onContentChange("gamePage")}>       
                             <CmdIcon/>
-                            Home.exe
+                            game.exe
                         </Button>
                     </ButtonHolder>
                     <ButtonHolder>

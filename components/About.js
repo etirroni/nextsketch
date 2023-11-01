@@ -8,6 +8,7 @@ const AboutBg=styled.div`
     background-repeat: no-repeat; 
     width:800px;
     height:800px;
+      
     
 `
 const GridContainer=styled.div`
@@ -22,7 +23,6 @@ const GridItem1=styled.div`
     grid-column: 1 / 5;
     border-bottom:4px solid #eee;
     text-align:center;
-    
 `
 const GridItem2=styled.div`
     grid-row: 2 / 2;
@@ -59,6 +59,7 @@ const WordInputTitle=styled.input`
     border:none;
     text-decoration:underline;
     font-size:large;
+    margin-bottom:5px;
     &:focus{
         outline:none;
         border: 2px solid #fff; 
@@ -68,6 +69,7 @@ const WordInputText=styled.input`
     display:flex;
     border:none;
     font-size:medium;
+    margin-bottom:15px;
     &:focus{
         outline:none;
         border: 2px solid #fff; 
@@ -76,7 +78,6 @@ const WordInputText=styled.input`
 const WordMainTitle=styled.input`
     display:flex;
     border:none;
-    font-size:x-large;
     text-decoration:underline;
     margin: 0 auto;
     width:30px;
@@ -88,10 +89,26 @@ const WordMainTitle=styled.input`
 const ProfileWrapper=styled.div`
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    background-color:#eee;
+    border-radius:10px;
+    padding:10px;
+    margin-top:20px;
+    font-size:small;
+    text-align:left;
+    img{
+  
+        border-radius:10px;
+        width:60%;
+        padding:20px;
+    }
+`
+const WordSelect=styled.select`
+
 `
 
 export default function About(){
+    const [font,setFont] = useState('Calibri');
+    const [fontSize,setFontSize] = useState('11');
     const [mainTitle,setMainTitle] = useState('CV');
     const [educationTitle, setEducationTitle] = useState('Education:');
     const [educationText, setEducationText] =useState('bachelorchchchhchc')
@@ -100,11 +117,24 @@ export default function About(){
     const [aboutTitle, setAboutTitle] = useState('About Me:');
     const [aboutText, setAboutText] =useState('imiamiam')
 
+    const basicFonts = [
+        "Arial, sans-serif",
+        "Helvetica, sans-serif",
+        "Times New Roman, serif",
+        "Georgia, serif",
+        "Courier New, monospace",
+        "Verdana, sans-serif",
+        "Tahoma, sans-serif",
+        "Impact, sans-serif",
+        "Comic Sans MS, cursive",
+        "Palatino, serif"
+      ];
+    
     return(
         <AboutBg>
          <GridContainer>
             <GridItem1>
-                <div style={{height:'24px'}}/>
+                <div style={{height:'24px', backgroundColor:'transparent'}}/>
                 <div style={{textAlign:'left', display:"flex", gap:"5px"}}>
                     <WordButtons>File</WordButtons>
                     <WordButtons>Home</WordButtons>  
@@ -115,8 +145,21 @@ export default function About(){
                     <WordButtons>Review</WordButtons>
                     <WordButtons>View</WordButtons>  
                 </div>
-                  
+                <div style={{ display: "flex", marginTop: "10px", padding: "10px", gap: "5px" }}>
+                <WordSelect onChange={(event) => setFont(event.target.value)}>
+                    <option>Calibri</option>
+                    {basicFonts?.map((f, index) => (
+                    <option key={index}>{f}</option>
+                    ))}
+                </WordSelect> 
+                <WordSelect onChange={(event) => setFontSize(event.target.value)}>
+                    {Array.from({ length: 10 }, (_, index) => (
+                    <option key={index}>{index + 11}</option>
+                    ))}
+                </WordSelect>
+                </div>
             </GridItem1>
+                
             <GridItem2>
 
             </GridItem2>
@@ -125,44 +168,53 @@ export default function About(){
             </GridItem3>
             <PaperBox>
                 <WordMainTitle
-                        value={mainTitle}
-                        onChange={(event)=>setMainTitle(event.target.value)}
-                    />
+                    style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
+                    value={mainTitle}
+                    onChange={(event)=>setMainTitle(event.target.value)}
+                />
                 <div style={{display:'flex', flexDirection:'column', gap:'10px'}}>
                     <ProfileWrapper>
-                        <div>
-                           <p>name:</p> 
-                           <p>phone:</p> 
-                           <p>email:</p> 
+                        <div style={{backgroundColor:"#eee", padding:"10px", borderRadius:"10px"}}>
+                           <p>Name:<br/> my name</p> 
+                           <p>Phone:<br/> +358401234567</p> 
+                           <p>Email:<br/>mrsmith@yahoo.org</p> 
                         </div>
-                        <div>
-                                asd
+                        <div style={{display:"flex",justifyContent:"right"}}>
+                                <img src="profiilikuva.png"/>
                         </div>
                     </ProfileWrapper>
+                    <div style={{padding:"10px"}}>
                     <WordInputTitle
+                        style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
                         value={educationTitle}
                         onChange={(event)=>setEducationTitle(event.target.value)}
                     />
                         <WordInputText
+                            style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
                             value={educationText}
                             onChange={(event)=>setEducationText(event.target.value)}
                         />
                     <WordInputTitle
+                        style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
                         value={workexpTitle}
                         onChange={(event)=>setWorkexpTitle(event.target.value)}
                     />
                         <WordInputText
+                            style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
                             value={workexpText}
                             onChange={(event)=>setWorkexpText(event.target.value)}
                         />
                     <WordInputTitle
+                        style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
                         value={aboutTitle}
                         onChange={(event)=>setAboutTitle(event.target.value)}
                     />
                         <WordInputText
+                            style={{fontFamily:`${font}`,fontSize:`${fontSize}px`}}
                             value={aboutText}
                             onChange={(event)=>setAboutText(event.target.value)}
                         />
+                    </div>
                 </div>
             </PaperBox>
         </GridContainer>
